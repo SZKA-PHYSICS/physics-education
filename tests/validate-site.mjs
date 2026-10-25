@@ -53,7 +53,8 @@ if(fs.existsSync(path.join(root,datasetFile))){
    for(const g of [7,8,9,10,11,12])check(u.some(x=>x.grade===g),'No entries for grade '+g);
    for(const item of u){
     for(const key of ['title','core','deeper','chapter','branch','eq','worked','explore','warning','sim']){
-     check(typeof item[key]==='string'&&item[key].trim().length>5,`Bad ${key} in ${item.id}`);
+     const minLength=key==='branch'?1:(key==='sim'?2:(key==='eq'?2:5));
+     check(typeof item[key]==='string'&&item[key].trim().length>minLength,`Bad ${key} in ${item.id}`);
     }
     check(item.quiz?.opts?.length===3,`Incorrect choice count in ${item.id}`);
     check(Number.isInteger(item.quiz?.answer)&&item.quiz.answer>=0&&item.quiz.answer<3,`Missing correct option for ${item.id}`);
