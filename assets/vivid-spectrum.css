@@ -1,0 +1,388 @@
+/* Fiziknama — Vivid Scientific Edition / 2026
+ * Palette: ultraviolet + electric blue + coral, with carefully readable neutral surfaces.
+ * Load AFTER page-specific styles and scientific-system.css.
+ * Does not touch the physics computation engines.
+ */
+:root{
+ --electric:#3954f6;--ultraviolet:#7138ec;--tangerine:#ff7456;
+ --mint:#06bfa6;--ink-night:#151a3c;--soft-ink:#52617c;
+ --ice:#f6f6ff;--warm:#fffaf6;--halo:#ece9ff;
+ --energy-shadow:0 22px 58px rgba(42,41,105,.095);
+}
+html[data-ui="scientific-2026"]{
+ --s-ink:#1d2547;--s-ink-soft:#505f79;--s-mute:#78819c;
+ --s-midnight:#17183e;--s-deep:#27245c;--s-accent:#3e57e5;
+ --s-teal:#0ca995;--s-line:#e4e6f3;--s-paper:#f8f8ff;
+ --s-white:#fff;--s-card-shadow:0 14px 38px rgba(43,37,97,.058);
+}
+html[data-ui="scientific-2026"] body{
+ background:#f8f8ff;color:#20294d;
+}
+html[data-ui="scientific-2026"] ::selection{background:#e9d6ff;color:#29205a}
+html[data-ui="scientific-2026"] .science-header{
+ background:rgba(255,255,255,.96)!important;
+ border-bottom-color:#eceafa!important;
+ box-shadow:0 7px 36px #2719790a!important
+}
+html[data-ui="scientific-2026"] .science-logo{color:#24224b!important}
+html[data-ui="scientific-2026"] .science-logo__symbol{
+ background:linear-gradient(135deg,#344fea 0%,#773ded 68%,#9e4cec 100%);
+ box-shadow:0 8px 23px #6752e435;
+ color:#fff
+}
+html[data-ui="scientific-2026"] .science-logo__words small{color:#7b7c98}
+html[data-ui="scientific-2026"] .science-nav a{color:#444963}
+html[data-ui="scientific-2026"] .science-nav a:hover,
+html[data-ui="scientific-2026"] .science-nav a[aria-current="page"]{
+ color:#4136d1;background:#f0edff
+}
+html[data-ui="scientific-2026"] .science-cta{
+ color:#fff!important;background:#3c55eb!important;
+ box-shadow:0 9px 22px #4158ee2a;
+}
+html[data-ui="scientific-2026"] .science-cta:hover{background:#6839e3!important}
+html[data-ui="scientific-2026"] .science-mobile-menu summary{
+ background:#f0edff;color:#4b40c3;border:1px solid #e3defb
+}
+html[data-ui="scientific-2026"] .science-mobile-menu__panel{border-color:#e5e1f8!important}
+html[data-ui="scientific-2026"] .science-mobile-menu__panel a:hover{background:#f3f1ff!important;color:#4d37d0}
+html[data-ui="scientific-2026"] :is(a,button,input,select,summary):focus-visible{outline-color:#f39957!important}
+
+/* Front page: electric editorial design, with layered light and strong visual hierarchy */
+html[data-page="home"] .home-hero{
+ background:
+ radial-gradient(ellipse 650px 580px at 93% 16%,rgba(147,97,255,.16),transparent 72%),
+ radial-gradient(ellipse 490px 420px at 7% 95%,rgba(255,151,98,.15),transparent 75%),
+ linear-gradient(132deg,#fffdf9 0%,#f9f8ff 54%,#f0edff 100%);
+ border-bottom:1px solid #eae4f7;
+ isolation:isolate
+}
+html[data-page="home"] .home-hero:before{
+ content:"";width:430px;height:430px;left:-170px;top:-145px;border-radius:50%;
+ background:radial-gradient(circle,#ff9e701e,transparent 69%);
+ box-shadow:0 0 0 90px #e6e2ff12;
+}
+html[data-page="home"] .home-hero:after{
+ content:"";position:absolute;width:145px;height:145px;right:2%;top:40px;
+ opacity:.18;z-index:0;pointer-events:none;
+ background-image:radial-gradient(#6444ee 1.4px,transparent 1.4px);
+ background-size:17px 17px
+}
+html[data-page="home"] .home-hero-inner{
+ padding-block:91px 99px;
+ gap:clamp(32px,5vw,76px);
+ position:relative;z-index:1
+}
+html[data-page="home"] .home-hero-content .home-tag{
+ background:#efebff;border:1px solid #dfd6ff;color:#5539ca;
+ box-shadow:0 5px 18px #6b4cea0d
+}
+html[data-page="home"] .home-tag .dot{
+ background:#fe754d;box-shadow:0 0 0 4px #ff997e2b
+}
+html[data-page="home"] .home-hero h1{
+ color:#1b2147;line-height:1.42;letter-spacing:-.077em;
+ font-size:clamp(38px,5.25vw,72px)
+}
+html[data-page="home"] .home-hero h1 em{
+ background:linear-gradient(105deg,#3859f4 9%,#7b37ec 61%,#ec5e9c 100%);
+ -webkit-background-clip:text;background-clip:text;color:transparent
+}
+html[data-page="home"] .home-hero-description{color:#56617e;line-height:2.25}
+html[data-page="home"] .home-primary-button{
+ background:linear-gradient(115deg,#3456ef,#6c3de9);color:#fff!important;
+ box-shadow:0 14px 32px #5a51dc35;border-radius:13px
+}
+html[data-page="home"] .home-primary-button:hover{
+ background:linear-gradient(115deg,#284add,#6331dd);
+ box-shadow:0 18px 38px #5a51dc4d
+}
+html[data-page="home"] .home-secondary-button{
+ color:#3b3984;background:#fff;border-color:#ded9f7;border-radius:13px
+}
+html[data-page="home"] .home-secondary-button:hover{background:#f4f0ff;border-color:#bcb0ef}
+html[data-page="home"] .home-hero-meta{color:#68708b}
+html[data-page="home"] .home-hero-meta span:before{color:#614ddc;background:#ede9ff}
+html[data-page="home"] .home-demo{
+ background:linear-gradient(150deg,#222351 0%,#171c40 57%,#2b205c 100%);
+ border:1px solid #5143a9;border-radius:25px;
+ box-shadow:0 29px 78px rgba(55,43,143,.27),0 8px 18px rgba(120,65,238,.14);
+ transform:rotate(-1.2deg);
+ transition:transform .28s ease,box-shadow .28s ease;
+}
+html[data-page="home"] .home-demo:hover{
+ transform:rotate(0deg) translateY(-3px);
+ box-shadow:0 35px 84px rgba(55,43,143,.29)
+}
+html[data-page="home"] .home-demo:before{
+ content:"";position:absolute;width:330px;height:330px;top:-145px;left:-130px;
+ background:radial-gradient(circle,#f8878135,transparent 70%);pointer-events:none
+}
+html[data-page="home"] .home-demo:after{
+ background:radial-gradient(circle at 98% 0%,#8560f82c,transparent 48%);
+}
+html[data-page="home"] .home-demo-head{border-bottom-color:#ffffff2a;position:relative;z-index:1}
+html[data-page="home"] .home-demo-index{
+ background:#f68a622a;color:#ffc9a6;border-color:#f98e646e
+}
+html[data-page="home"] .home-demo-visual svg{filter:drop-shadow(0 9px 18px #140d3c65)}
+html[data-page="home"] .home-demo-readout strong{color:#92f0e0}
+html[data-page="home"] .home-demo-readout small{color:#d4cafe}
+html[data-page="home"] .home-demo-formula{color:#f6ddff;border-color:#7971b8;background:#6354b122}
+html[data-page="home"] .home-demo-controls select{
+ color:#fff;background:#39366f;border:1px solid #6562a0
+}
+html[data-page="home"] .home-demo-controls input[type="range"]{accent-color:#ff9d76}
+html[data-page="home"] .home-demo-control-val{color:#ffc99d}
+html[data-page="home"] .home-proof{
+ background:#fff;border-bottom:1px solid #ebe8f4
+}
+html[data-page="home"] .home-proof-item{border-color:#eae7f4}
+html[data-page="home"] .home-proof-item:nth-child(1) strong{color:#4556e4}
+html[data-page="home"] .home-proof-item:nth-child(2) strong{color:#8041df}
+html[data-page="home"] .home-proof-item:nth-child(3) strong{color:#e06e57}
+html[data-page="home"] .home-proof-item:nth-child(4) strong{color:#128f9b}
+html[data-page="home"] .home-proof-item span{color:#687187}
+html[data-page="home"] .home-eyebrow{color:#6b42ce}
+html[data-page="home"] .home-eyebrow:before{background:#ff8964}
+html[data-page="home"] .home-section-heading h2{color:#20264e}
+html[data-page="home"] .home-section-heading p{color:#64708b}
+html[data-page="home"] .home-text-link{color:#5147c6}
+html[data-page="home"] .home-text-link:hover{color:#7941e0}
+html[data-page="home"] .home-section{padding-block:94px}
+html[data-page="home"] .home-platform-grid{gap:20px}
+html[data-page="home"] .home-platform-card{
+ border:1px solid #e6e4f2;background:#fff;border-radius:23px;
+ box-shadow:0 11px 35px #3a317008;min-height:315px
+}
+html[data-page="home"] .home-platform-card:hover{
+ border-color:#bcb0fd;box-shadow:0 23px 50px #5948ac1c
+}
+html[data-page="home"] .home-platform-card.featured{
+ background:linear-gradient(145deg,#3555ec,#6741db 68%,#813eec);
+ border-color:#4e45d6;color:#fff;
+ box-shadow:0 25px 48px #5646c42b;
+}
+html[data-page="home"] .home-platform-card.featured:before{
+ background:radial-gradient(circle,#ffffff36,transparent 69%);
+}
+html[data-page="home"] .home-card-symbol{
+ color:#6046c8;background:#f0ebff;border-color:#e1d8fc;border-radius:16px
+}
+html[data-page="home"] .home-platform-card:nth-child(3) .home-card-symbol{
+ color:#dd633e;background:#fff0e8;border-color:#ffdfce
+}
+html[data-page="home"] .home-platform-card.featured .home-card-symbol{
+ color:#fff;background:#ffffff24;border-color:#ffffff55
+}
+html[data-page="home"] .home-card-overline{color:#7153d6}
+html[data-page="home"] .home-platform-card.featured .home-card-overline{color:#f2d9ff}
+html[data-page="home"] .home-platform-card h3{color:#22294f}
+html[data-page="home"] .home-platform-card.featured h3{color:#fff}
+html[data-page="home"] .home-platform-card p{color:#66708a}
+html[data-page="home"] .home-platform-card.featured p{color:#f0eaff}
+html[data-page="home"] .home-platform-card .home-card-footer{color:#79829d}
+html[data-page="home"] .home-platform-card.featured .home-card-footer{color:#e7dbff}
+html[data-page="home"] .home-card-arrow{
+ color:#6552d8;border-color:#e6defc;background:#faf8ff
+}
+html[data-page="home"] .home-platform-card.featured .home-card-arrow{
+ color:#fff;background:#ffffff29;border-color:#ffffff6b
+}
+html[data-page="home"] .home-learning{
+ background:linear-gradient(135deg,#f2efff 0%,#fff8f4 100%);
+ border-block:1px solid #ece7fb
+}
+html[data-page="home"] .home-grade-link{
+ border:1px solid #e6defa;background:rgba(255,255,255,.83);
+ box-shadow:0 8px 22px #5145a009;border-radius:18px
+}
+html[data-page="home"] .home-grade-link:hover{
+ background:#fff;transform:translateY(-5px);border-color:#aea0f3;
+ box-shadow:0 18px 34px #7157c41a
+}
+html[data-page="home"] .home-grade-link .home-grade-id{color:#7049d2}
+html[data-page="home"] .home-grade-link strong{color:#2f285e}
+html[data-page="home"] .home-grade-link span{color:#73738e}
+html[data-page="home"] .home-grade-link:nth-child(2n) .home-grade-id{color:#d7654c}
+html[data-page="home"] .home-grade-link:nth-child(3n) .home-grade-id{color:#286ab6}
+html[data-page="home"] .home-labs-section{background:#fff}
+html[data-page="home"] .home-lab-card{
+ border-color:#ebe7f5;background:#fff;border-radius:20px;
+ box-shadow:0 10px 29px #4735750a
+}
+html[data-page="home"] .home-lab-card:hover{
+ border-color:#aa9beb;transform:translateY(-5px);
+ box-shadow:0 20px 42px #644bac17
+}
+html[data-page="home"] .home-lab-card .home-lab-icon{
+ color:#594ae4;background:#f0eeff;border-radius:14px
+}
+html[data-page="home"] .home-lab-card:nth-child(2) .home-lab-icon{
+ color:#e36a48;background:#fff0e9
+}
+html[data-page="home"] .home-lab-card:nth-child(3) .home-lab-icon{
+ color:#109aa0;background:#e9fbf8
+}
+html[data-page="home"] .home-lab-card:nth-child(4) .home-lab-icon{
+ color:#a340c1;background:#f9ebff
+}
+html[data-page="home"] .home-lab-card h3{color:#262650}
+html[data-page="home"] .home-method{
+ background:linear-gradient(118deg,#292263,#4830a4 55%,#6b3ab6);
+}
+html[data-page="home"] .home-method:before{
+ box-shadow:0 0 0 67px #a594ff0c,0 0 0 135px #ffffff08
+}
+html[data-page="home"] .home-method .home-eyebrow{color:#ffd0ae}
+html[data-page="home"] .home-method .home-eyebrow:before{background:#ffa778}
+html[data-page="home"] .home-method .home-section-heading p{color:#e2dafa}
+html[data-page="home"] .home-method-step{
+ background:#ffffff0c;border-color:#ffffff34;border-radius:18px
+}
+html[data-page="home"] .home-method-step b{color:#ffbb8d}
+html[data-page="home"] .home-method-step p{color:#e8e0f7}
+html[data-page="home"] .home-method .home-text-link{color:#ffd9b9!important}
+html[data-page="home"] .home-academic{background:#fffaf6}
+html[data-page="home"] .home-academic-card{
+ background:#fff;border:1px solid #f0e6e4;border-radius:22px;
+ box-shadow:0 14px 32px #7d53720a
+}
+html[data-page="home"] .home-academic-card h3{color:#27234f}
+html[data-page="home"] .home-source-links a{
+ border:1px solid #e5ddf4;color:#5945bd;background:#fbf9ff
+}
+html[data-page="home"] .home-source-links a:hover{
+ border-color:#9b8cf2;background:#f1edff
+}
+html[data-page="home"] .home-credit{
+ background:linear-gradient(140deg,#f5edff,#fff2ec)
+}
+html[data-page="home"] .home-credit small{color:#7643c8}
+html[data-page="home"] .home-credit strong{color:#30244e}
+html[data-page="home"] .home-footer{
+ background:linear-gradient(110deg,#1a1c41,#282052);
+ border-top-color:#473f7f
+}
+html[data-page="home"] .home-footer-bottom{border-top-color:#ffffff27}
+html[data-page="home"] .home-footer-bottom a{color:#e6c0ff}
+
+/* Consistent vivid accents across all internal pages */
+html[data-ui="scientific-2026"]:not([data-page="home"]) :is(.hero,.ac-hero){
+ background:
+ radial-gradient(ellipse 50% 130% at 7% 91%,#d774862a,transparent 74%),
+ radial-gradient(ellipse 45% 100% at 96% 9%,#a16bea25,transparent 69%),
+ linear-gradient(118deg,#252459,#3b2b81 60%,#54349c);
+ color:#fff;border-color:#55469a
+}
+html[data-ui="scientific-2026"]:not([data-page="home"]) :is(.hero,.ac-hero) h1{color:#fff}
+html[data-ui="scientific-2026"]:not([data-page="home"]) :is(.hero,.ac-hero) p{color:#e8e3f8}
+html[data-ui="scientific-2026"]:not([data-page="home"]) :is(.hero,.ac-hero) :is(.eyebrow,.hero-tag,.ac-tag){color:#ffc6a0}
+html[data-ui="scientific-2026"] :is(.formula,.unit .formula){
+ background:#f3f0ff;color:#5242b8;border-color:#ddd6fd
+}
+html[data-ui="scientific-2026"] :is(.unit,.lesson,.lab,.worksheet,.ac-card,.ac-source,.references){
+ border-color:#e7e5f3;
+ box-shadow:0 14px 35px #4337830b
+}
+html[data-ui="scientific-2026"] :is(.unit h3,.lesson h2,.worksheet h2,.lab h2){color:#29234f}
+html[data-ui="scientific-2026"] :is(.unit .pill,.lesson .number,.pillar){
+ color:#5d49cd;background:#efebff
+}
+html[data-ui="scientific-2026"] .unit .pill.branch{
+ color:#c0604c;background:#fff0e9
+}
+html[data-ui="scientific-2026"] :is(.unit-actions a,.actions a,.trial button,.answerline button){
+ background:#4754e6;color:#fff
+}
+html[data-ui="scientific-2026"] :is(.unit-actions a,.actions a,.trial button,.answerline button):hover{
+ background:#6438d8
+}
+html[data-ui="scientific-2026"] :is(.run,.unit .chevron,.references a){
+ color:#5c42cf
+}
+html[data-ui="scientific-2026"] :is(.answerline input,.toolstrip select,.toolstrip input,.slider input):focus{
+ border-color:#8163db
+}
+html[data-ui="scientific-2026"] .stage{border-color:#ebe5ff}
+html[data-ui="scientific-2026"] .ac-profile{
+ background:linear-gradient(125deg,#333080,#623bbd);
+}
+html[data-ui="scientific-2026"] .ac-feature-mark{
+ background:#f0edff;color:#6950d7
+}
+html[data-ui="scientific-2026"] .ac-link{
+ background:#f1d7fb;color:#36215c
+}
+html[data-ui="scientific-2026"] .ac-source:hover{border-color:#b9aafa}
+html[data-ui="scientific-2026"] .ac-source b{color:#6c46ce}
+html[data-ui="scientific-2026"] .ac-footer{
+ background:linear-gradient(110deg,#201d52,#33245e)
+}
+html[data-ui="scientific-2026"] .ac-footer a{color:#ddc6ff}
+html[data-ui="scientific-2026"] .ac-scope{
+ background:#f5f0ff;color:#4e4c73;border-right-color:#7e58ed
+}
+html[data-ui="scientific-2026"][data-page="labs"] .stage{
+ background:linear-gradient(145deg,#eeecff,#fff0e9);
+ border-color:#ded8fb
+}
+html[data-ui="scientific-2026"][data-page="labs"] .controls{
+ background:#fcfbff;border-color:#e7e2f7
+}
+html[data-ui="scientific-2026"][data-page="labs"] .metric{
+ background:#f3f0ff;border-color:#e4ddfc
+}
+html[data-ui="scientific-2026"][data-page="labs"] .metric strong{color:#5844c2}
+html[data-ui="scientific-2026"][data-page="labs"] .pick[aria-current="true"]{
+ color:#513bc0;background:#f0edff
+}
+html[data-ui="scientific-2026"][data-page="curriculum"] .unit .formula{
+ background:#f2efff;color:#5541bd
+}
+html[data-ui="scientific-2026"][data-page="practice"] .dot.active{
+ background:#514de1;border-color:#514de1
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] body{
+ --paper:#f8f8ff;--ink:#252346;--line:#e9e5f5;--dark:#211b4d;--purple:#6442e7;--mint:#ea7d5c
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .sidebar{
+ background:linear-gradient(170deg,#231f58,#33216c 65%,#3f2873);
+ border-color:#52417b
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .brand-badge{
+ background:linear-gradient(120deg,#4567f3,#8744df)!important;
+ box-shadow:0 9px 19px #1710363b
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .sidebar-bottom{
+ background:#3b307b;border-color:#6655a4
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .topbar{background:#fffdfd}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .primary-btn{
+ background:linear-gradient(120deg,#415ce9,#6a3ee7)
+}
+html[data-ui="scientific-2026"][data-page="fiziknama"] .module-card:hover{
+ box-shadow:0 19px 45px #5045a91b
+}
+html[data-ui="scientific-2026"] .footer{
+ background:#272052!important
+}
+html[data-ui="scientific-2026"] .footer a{color:#ddc4ff}
+
+@media(max-width:830px){
+ html[data-page="home"] .home-hero-inner{padding-block:46px 61px}
+ html[data-page="home"] .home-demo{transform:none}
+ html[data-page="home"] .home-demo:hover{transform:translateY(-2px)}
+ html[data-page="home"] .home-section{padding-block:64px}
+}
+@media(max-width:590px){
+ html[data-page="home"] .home-hero-inner{padding-block:35px 44px}
+ html[data-page="home"] .home-hero h1{font-size:clamp(34px,10.3vw,45px)}
+ html[data-page="home"] .home-platform-card{min-height:245px}
+ html[data-page="home"] .home-demo{border-radius:19px}
+ html[data-page="home"] .home-method-step{border-radius:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-ui="scientific-2026"] .home-demo,
+ html[data-ui="scientific-2026"] .home-platform-card{transition:none!important}
+}
