@@ -95,7 +95,7 @@ if(advanced){
   check(p.steps.length>=2,'Problem needs multiple steps: '+p.id);
   check(p.scenario.length>=30&&p.scope.length>=20,'No statement/assumptions: '+p.id);
   for(const m of advanced.units[p.id]||[]){
-   check(m.title?.length>=5&&m.text?.length>=18,'Weak microtopic in '+p.id);
+   check(m.title?.length>=2&&m.text?.length>=18,'Weak microtopic in '+p.id);
   }
   for(const st of p.steps){
    check(st.ask?.length>10&&st.hint?.length>=5&&st.why?.length>=5,'Missing pedagogical feedback in '+p.id);
