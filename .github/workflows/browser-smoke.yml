@@ -1,0 +1,48 @@
+name: Browser visual smoke tests
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'index.html'
+      - 'about.html'
+      - 'sources.html'
+      - 'curriculum.html'
+      - 'practice.html'
+      - 'labs-plus.html'
+      - 'learning-path.html'
+      - 'fiziknama.html'
+      - 'assets/**'
+      - 'tests/browser-smoke.mjs'
+      - '.github/workflows/browser-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser test engine
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium --with-deps
+      - name: Start local preview server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/fiziknama-preview.log 2>&1 &
+          for i in $(seq 1 25); do
+            if curl -fsS http://127.0.0.1:8765/index.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Test desktop and mobile pages and lab controls
+        run: node tests/browser-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fiziknama-browser-previews
+          path: qa-screenshots/
+          if-no-files-found: ignore
+          retention-days: 14
