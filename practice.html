@@ -1,0 +1,141 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="سیده زهرا کراری"><meta name="theme-color" content="#172648">
+<meta name="description" content="حل گام‌به‌گام ۳۳ مسئلهٔ چندمرحله‌ای از علوم هفتم تا نهم و فیزیک دهم تا دوازدهم با بازخورد و نکتهٔ آموزشی."><title>کارگاه حل مسئلهٔ فیزیک | فیزیک‌نما</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color:#17284a;background:#f3f6fc}*{box-sizing:border-box}
+body{margin:0;line-height:1.95}a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #587ce0;outline-offset:3px}
+header{background:#132247;color:#fff;padding:15px 0}
+.wrap{width:min(1170px,calc(100% - 32px));margin:auto}
+nav{display:flex;gap:17px;align-items:center;flex-wrap:wrap;font-size:13px}
+nav .brand{font-size:19px;font-weight:900;margin-inline-end:auto}
+nav a:not(.brand){color:#dceaff}
+.hero{background:linear-gradient(120deg,#253b86,#122347 70%);color:white;padding:42px 0}
+.hero h1{font-size:clamp(25px,3.8vw,42px);margin:4px 0}
+.hero p{color:#e2e9ff;margin:6px 0;font-size:14px;max-width:850px}.eyebrow{color:#b9f5d5;font-size:12px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}.stat{padding:10px 14px;background:#ffffff19;border:1px solid #ffffff2e;border-radius:12px;font-size:13px}
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:22px;margin-top:25px;align-items:start}
+aside,.worksheet{background:#fff;border:1px solid #e1e8f5;border-radius:19px;box-shadow:0 12px 34px #1727460c}
+aside{position:sticky;top:16px;padding:17px}
+aside label{display:block;font-size:12px;font-weight:800;color:#5d7093;margin-bottom:5px}
+aside select,aside input{width:100%;padding:10px 11px;border:1px solid #d9e3f5;border-radius:10px;margin-bottom:12px;color:#18335b;background:#fff;min-width:0}
+#problemList{max-height:min(64vh,690px);overflow:auto}
+.pick{width:100%;display:flex;gap:9px;align-items:start;justify-content:space-between;border:0;background:none;border-bottom:1px solid #edf0f8;padding:10px 5px;text-align:right;color:#274066;font-size:12px}
+.pick:hover,.pick[aria-current="true"]{background:#ecf3ff;border-radius:8px;color:#2053b5}
+.pick .done{color:#0d9a70;font-weight:900}
+.worksheet{padding:27px;min-height:470px}
+.breadcrumb{color:#5871a5;font-size:12px;font-weight:700}
+.worksheet h2{font-size:clamp(21px,3vw,28px);line-height:1.5;margin:10px 0}
+.scenario{background:#f1f5ff;padding:19px;border-radius:13px;border-right:4px solid #436ed6;font-size:15px}
+.scope{margin:14px 0;color:#6c708b;font-size:12px}
+.steplist{display:flex;gap:7px;margin:18px 0 24px;flex-wrap:wrap}
+.dot{padding:5px 12px;border-radius:30px;border:1px solid #d8e1f4;color:#7184a1;font-size:12px}
+.dot.active{background:#284d9d;color:#fff;border-color:#284d9d}
+.dot.correct{background:#dcf9e9;color:#116d4a;border-color:#9ce2bf}
+.stage{padding:18px 20px;background:#fff;border:1px solid #dde6f5;border-radius:14px;margin-bottom:17px}
+.stage.locked{opacity:.57;background:#f7f9fd}
+.stage h3{font-size:16px;margin:0 0 6px}
+.stage p{margin:0 0 12px;font-size:14px;color:#394d6d}
+.stage label{display:block;font-size:12px;color:#5b7291;margin:6px 0 5px}
+.answerline{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.answerline input{width:min(230px,100%);border:1px solid #aabce0;border-radius:10px;padding:11px 12px;font-size:17px;direction:ltr;text-align:left}
+.answerline button,.actions a{padding:10px 15px;border:0;border-radius:10px;background:#234cab;color:#fff;font-size:12px;font-weight:800}
+.unit{color:#697b95;font-size:12px}
+.hint{background:#edf4ff;color:#375b9a;border:0!important;padding:9px 12px!important}
+.feedback{margin-top:12px;padding:11px;border-radius:10px;font-size:13px;background:#eff3ff;color:#244a93}
+.feedback.ok{background:#e0f8ec;color:#176649}.feedback.no{background:#fff0e8;color:#944c29}
+.solution{background:#f4f8ff;border-right:3px solid #80a4ef;padding:10px 14px;margin-top:11px;font-size:13px}
+.muted{font-size:13px;color:#687e9e}
+.complete{padding:16px;border-radius:13px;background:#e6fbef;border:1px solid #9fe9c4;color:#136848;font-weight:800;margin:15px 0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.actions a.secondary{background:#e8effb;color:#30569d}
+footer{margin-top:35px;background:#152448;color:#dce7fb;font-size:12px;padding:25px 0}
+footer a{text-decoration:underline}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{position:static}#problemList{max-height:220px}.worksheet{padding:18px}}
+@media(max-width:480px){.stage{padding:14px}.answerline input{width:100%}nav .brand{width:100%}.hero{padding:29px 0}}
+</style></head>
+<body><header><nav class="wrap"><a class="brand" href="index.html">Φ فیزیک‌نما</a><a href="curriculum.html">درس‌نامه‌ها</a><a href="labs-plus.html">آزمایشگاه‌های ویژه</a><a href="fiziknama.html">آزمایشگاه اصلی</a></nav></header>
+<section class="hero"><div class="wrap"><span class="eyebrow">تمرین هدایت‌شده با بازخورد علمی</span><h1>کارگاه حل مسئلهٔ چندمرحله‌ای</h1>
+<p>ابتدا صورت مسئله و فرض‌ها را بخوانید؛ هر گام را خودتان حساب کنید. تنها پس از پاسخ درست، گام بعدی باز می‌شود. در صورت نیاز از «راهنمایی» استفاده کنید.</p>
+<div class="stats"><div class="stat" id="totalStat">۳۳ مسئله</div><div class="stat" id="stepsStat">۶۷ گام محاسباتی</div><div class="stat" id="completeStat">۰ مسئلهٔ کامل‌شده</div></div></div></section>
+<main class="wrap layout"><aside><label for="gradeSelect">فیلتر پایه</label>
+<select id="gradeSelect"><option value="all">همهٔ پایه‌ها</option><option value="7">هفتم</option><option value="8">هشتم</option><option value="9">نهم</option><option value="10">دهم</option><option value="11">یازدهم</option><option value="12">دوازدهم</option></select>
+<label for="search">جست‌وجوی مسئله</label><input id="search" type="search" placeholder="فشار، انرژی، مدار ...">
+<div id="problemList" role="navigation" aria-label="فهرست مسائل"></div></aside>
+<section class="worksheet" id="worksheet" aria-live="polite"></section></main>
+<footer><div class="wrap">مجموعهٔ آموزشی و مدیریت پروژه: سیده زهرا کراری، مدرس دانشگاه و دبیر فیزیک ـ تهران. پاسخ‌های درست فقط در مرورگر همین دستگاه ذخیره می‌شوند. <a href="curriculum.html">بازگشت به درس‌نامه‌ها</a></div></footer>
+<script src="data/curriculum-data.js"></script><script src="data/advanced-content.js"></script>
+<script>
+(()=>{
+'use strict';
+const ADV=window.FIZIKNAMA_ADVANCED,CORE=window.FIZIKNAMA_CURRICULUM;
+if(!ADV||!CORE){document.getElementById('worksheet').textContent='دادهٔ آموزشی بارگیری نشد؛ فایل‌های data را بررسی کنید.';return}
+const byId=Object.fromEntries(CORE.units.map(x=>[x.id,x]));
+const problems=ADV.problems;
+const storeKey='fiziknama.problem.steps.v1';
+let completed={};try{completed=JSON.parse(localStorage.getItem(storeKey)||'{}')||{}}catch(e){}
+let selected=problems[0].id;
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
+const toLatin=s=>String(s).replace(/[۰-۹]/g,c=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(c))).replace(/[٠-٩]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(c))).replace(/[٫]/g,'.').replace(/[٬،\s]/g,'').replace(/−/g,'-');
+const gradeName=g=>({7:'هفتم',8:'هشتم',9:'نهم',10:'دهم',11:'یازدهم',12:'دوازدهم'})[g];
+function save(){try{localStorage.setItem(storeKey,JSON.stringify(completed))}catch(e){}}
+function isDone(p){return (completed[p.id]||[]).length>=p.steps.length}
+function updateStats(){
+ document.getElementById('totalStat').textContent=problems.length+' مسئله';
+ document.getElementById('stepsStat').textContent=problems.reduce((s,p)=>s+p.steps.length,0)+' گام محاسباتی';
+ document.getElementById('completeStat').textContent=problems.filter(isDone).length+' مسئلهٔ کامل‌شده';
+}
+function renderMenu(){
+ const g=document.getElementById('gradeSelect').value,q=document.getElementById('search').value.trim();
+ document.getElementById('problemList').innerHTML=problems.filter(p=>(g==='all'||String(byId[p.id]?.grade)===g)&&(!q||(byId[p.id]?.title+' '+p.scenario).includes(q)))
+ .map(p=>`<button type="button" class="pick" data-id="${p.id}" aria-current="${selected===p.id}"><span>${esc(gradeName(byId[p.id].grade))} • ${esc(byId[p.id].title)}</span><span class="done">${isDone(p)?'✓':''}</span></button>`).join('')||'<p class="muted">نتیجه‌ای یافت نشد.</p>';
+ updateStats();
+}
+function renderProblem(){
+ const p=problems.find(x=>x.id===selected),unit=byId[p.id];if(!p||!unit)return;
+ const done=completed[p.id]||[];const count=p.steps.length;
+ document.getElementById('worksheet').innerHTML=`
+ <span class="breadcrumb">پایهٔ ${gradeName(unit.grade)} • ${esc(unit.branch)} • مسئله ${problems.indexOf(p)+1} از ${problems.length}</span>
+ <h2>${esc(unit.title)}</h2><div class="scenario">${esc(p.scenario)}</div><div class="scope">فرض‌های مدل: ${esc(p.scope)}</div>
+ <div class="steplist">${p.steps.map((s,i)=>`<span class="dot ${done.includes(i)?'correct':i===done.length?'active':''}">گام ${i+1} ${done.includes(i)?'✓':''}</span>`).join('')}</div>
+ ${p.steps.map((s,i)=>{
+ const passed=done.includes(i),locked=i>done.length;
+ return `<section class="stage ${locked?'locked':''}" data-step="${i}">
+ <h3>گام ${i+1}: ${esc(s.ask)}</h3>
+ <p>${i===0?'از داده‌های مسئله شروع کنید.':'نتیجهٔ مرحله‌های قبل را به کار ببرید.'}</p>
+ ${passed?`<div class="feedback ok">پاسخ صحیح: <b dir="ltr">${s.answer}</b> ${esc(s.unit)}</div><div class="solution">${esc(s.why)}</div>`:
+ `<label for="answer-${i}">پاسخ عددی (فقط عدد، بدون یکا)</label><div class="answerline">
+ <input id="answer-${i}" class="answer" type="text" inputmode="decimal" placeholder="پاسخ عددی..." ${locked?'disabled':''} aria-label="پاسخ گام ${i+1}">
+ <span class="unit" dir="ltr">${esc(s.unit)}</span><button type="button" class="check" ${locked?'disabled':''}>بررسی پاسخ</button>
+ <button type="button" class="hint" ${locked?'disabled':''}>راهنمایی</button></div>
+ <div class="feedback" hidden aria-live="polite"></div>`}
+ </section>`;
+ }).join('')}
+ ${done.length===count?'<div class="complete">✓ همهٔ مراحل درست حل شد. اکنون می‌توانید نتیجه و فرض‌های مدل را با درس‌نامه مقایسه کنید.</div>':''}
+ <div class="actions"><a href="curriculum.html#${p.id}">مطالعهٔ درس مرتبط</a>
+ <a class="secondary" href="labs-plus.html#${esc(p.lab)}">آزمایشگاه ویژهٔ مرتبط</a>
+ <a class="secondary" href="fiziknama.html#lesson-${esc(unit.sim)}">آزمایشگاه اصلی</a></div>
+ <p class="muted">برای ورودی‌هایی مانند ۰٫۵ از نقطه یا ممیز فارسی استفاده کنید. پاسخ عددی با خطای گردکردن جزئی پذیرفته می‌شود؛ توضیح علمی بعد از پاسخ صحیح نمایش داده خواهد شد.</p>`;
+ renderMenu();if(!isDone(p)){const first=document.querySelector('.stage:not(.locked) .answer');if(first)first.focus({preventScroll:true})}
+}
+document.getElementById('problemList').addEventListener('click',e=>{const btn=e.target.closest('[data-id]');if(!btn)return;selected=btn.dataset.id;location.hash=selected;renderProblem();});
+document.getElementById('worksheet').addEventListener('click',e=>{
+ const stage=e.target.closest('.stage');if(!stage)return;
+ const i=Number(stage.dataset.step),p=problems.find(x=>x.id===selected),s=p?.steps[i];if(!s)return;
+ const out=stage.querySelector('.feedback');
+ if(e.target.closest('.hint')){out.hidden=false;out.className='feedback';out.textContent='راهنمای گام: '+s.hint;return}
+ if(!e.target.closest('.check'))return;
+ const raw=stage.querySelector('.answer').value.trim();
+ const normalized=toLatin(raw);const value=normalized===''?NaN:Number(normalized);
+ if(!Number.isFinite(value)){out.hidden=false;out.className='feedback no';out.textContent='لطفاً فقط پاسخ عددی وارد کنید.';return}
+ const correct=Math.abs(value-s.answer)<=s.tolerance;
+ out.hidden=false;out.className='feedback '+(correct?'ok':'no');
+ out.textContent=correct?'درست است؛ '+s.why:'هنوز درست نیست. واحدهای مسئله و فرمول مرحله را دوباره بررسی کنید؛ می‌توانید از راهنمایی استفاده کنید.';
+ if(correct){const done=completed[p.id]||[];if(i===done.length){completed[p.id]=[...done,i];save();renderProblem()}}
+});
+document.getElementById('worksheet').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.answer')){e.preventDefault();e.target.closest('.stage').querySelector('.check').click()}});
+['gradeSelect','search'].forEach(id=>document.getElementById(id).addEventListener(id==='search'?'input':'change',renderMenu));
+const hash=location.hash.slice(1);if(problems.some(p=>p.id===hash))selected=hash;
+renderProblem();
+})();
+</script></body></html>
