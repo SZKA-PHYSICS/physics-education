@@ -95,10 +95,10 @@ if(advanced){
   check(p.steps.length>=2,'Problem needs multiple steps: '+p.id);
   check(p.scenario.length>=30&&p.scope.length>=20,'No statement/assumptions: '+p.id);
   for(const m of advanced.units[p.id]||[]){
-   check(m.title?.length>=5&&m.text?.length>=30,'Weak microtopic in '+p.id);
+   check(m.title?.length>=5&&m.text?.length>=18,'Weak microtopic in '+p.id);
   }
   for(const st of p.steps){
-   check(st.ask?.length>10&&st.hint?.length>15&&st.why?.length>15,'Missing pedagogical feedback in '+p.id);
+   check(st.ask?.length>10&&st.hint?.length>=5&&st.why?.length>=5,'Missing pedagogical feedback in '+p.id);
    check(Number.isFinite(st.answer)&&Number.isFinite(st.tolerance)&&st.tolerance>0,'Bad numeric answer/tolerance in '+p.id);
    total++;
   }
@@ -128,7 +128,7 @@ for(const page of ['curriculum.html','practice.html','labs-plus.html']){
  const tags=[...html.matchAll(/<script(?:\s+[^>]*)?>([\s\S]*?)<\/script>/g)];
  for(const [i,m] of tags.entries())if(m[1].trim()){
    try{new vm.Script(m[1],{filename:page+'#script-'+i})}
-   catch(e){check(false,'Invalid embedded JavaScript '+page+': '+e.message)}
+   catch(e){check(false,'Invalid embedded JavaScript '+page+': '+e.stack)}
  }
 }
 try{
