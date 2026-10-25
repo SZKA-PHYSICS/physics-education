@@ -65,7 +65,7 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cur
 <div class="hero-links"><a href="#catalog">شروع مطالعه</a><a class="alt" href="fiziknama.html">ورود به شبیه‌سازی‌ها</a></div>
 <div class="badges"><span>۶ پایهٔ تحصیلی</span><span id="unitCount">۳۳ درس</span><span>مثال حل‌شده و فعالیت پژوهشی</span><span>تمرین با توضیح پاسخ</span></div></div></section>
 <main class="container" id="catalog"><div class="notice">
-<strong>حدود پوشش:</strong> در متوسطهٔ اول فقط موضوعات مرتبط با فیزیک از کتاب «علوم تجربی» بررسی شده‌اند، نه تمام فصل‌های شیمی، زیست یا زمین‌شناسی. مطالب این صفحه شرح‌های تألیفی مطابق با سرفصل‌های شناخته‌شده‌اند، نه متن رسمی کتاب درسی یا تأییدیهٔ وزارت آموزش‌وپرورش. تفاوت فصل‌بندی ریاضی و تجربی مشخص شده و کنترل نهایی با چاپ سال تحصیلی مورد استفادهٔ مدرسه لازم است.
+<strong>حدود پوشش:</strong> در متوسطهٔ اول فقط موضوعات مرتبط با فیزیک از کتاب «علوم تجربی» بررسی شده‌اند، نه تمام فصل‌های شیمی، زیست یا زمین‌شناسی. مطالب این صفحه شرح‌های تألیفی مطابق با سرفصل‌های شناخته‌شده‌اند، نه متن رسمی کتاب درسی یا تأییدیهٔ وزارت آموزش‌وپرورش. پیوند هر درس به آزمایشگاه ممکن است به یک <strong>مدل مکمل و نزدیک</strong> اشاره کند، نه شبیه‌سازی دقیق همان عنوان؛ برای نمونه میدان الکتریکی و مدار اهمی دو پدیدهٔ متفاوت‌اند. تفاوت فصل‌بندی ریاضی و تجربی مشخص شده و کنترل نهایی با چاپ سال تحصیلی مورد استفادهٔ مدرسه لازم است.
 </div>
 <section class="toolstrip" aria-label="فیلتر درس‌نامه‌ها">
 <div><label for="gradeFilter">پایهٔ تحصیلی</label><select id="gradeFilter"><option value="all">همهٔ پایه‌ها</option><option value="7">هفتم</option><option value="8">هشتم</option><option value="9">نهم</option><option value="10">دهم</option><option value="11">یازدهم</option><option value="12">دوازدهم</option></select></div>
@@ -107,7 +107,7 @@ function unitHTML(x){
  <h4>هشدار دربارهٔ خطای مفهومی</h4><p class="warning">${E(x.warning)}</p>
  <section class="quiz" aria-label="ارزشیابی تکوینی"><h4>پرسش خودسنجی</h4><p>${E(x.quiz.q)}</p>
  <div class="answers">${x.quiz.opts.map((option,i)=>`<button type="button" data-choice="${i}" aria-pressed="false">${E(option)}</button>`).join('')}</div><p class="feedback" hidden aria-live="polite"></p></section>
- <div class="unit-actions"><a href="fiziknama.html#lesson-${E(x.sim)}">شبیه‌سازی مرتبط و آزمون‌های بیشتر ←</a><a class="secondary" href="learning-path.html">نقشهٔ یادگیری</a></div>
+ <div class="unit-actions"><a href="fiziknama.html#lesson-${E(x.sim)}">آزمایشگاه مکمل و آزمون‌های بیشتر ←</a><a class="secondary" href="learning-path.html">نقشهٔ یادگیری</a></div>
  </div></details>`;
 }
 function allowed(x){
