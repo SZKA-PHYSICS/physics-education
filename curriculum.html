@@ -56,14 +56,18 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cur
 .cards{display:block}.unit{box-shadow:none;break-inside:avoid;margin-bottom:8px}.unit-content{display:block!important}
 .unit:not([open]) .unit-content{display:block!important}.chevron{display:none}
 }
+.micro-grid{display:grid;grid-template-columns:1fr;gap:9px;margin:9px 0 12px}
+.micro{padding:11px 13px;border:1px solid #e2e9f8;border-radius:10px;background:#f9fbff;font-size:12px}
+.micro strong{display:block;color:#31549d;margin-bottom:3px}.micro span{color:#465b77}
+.extension-pill{font-size:11px;color:#186f53;background:#e0f8ea;border-radius:7px;display:inline-block;padding:2px 9px;margin-top:5px}
 </style></head>
 <body><header class="topbar"><div class="container topbar-inner"><a href="index.html" class="logo">⚛ فیزیک‌نما | آموزش فیزیک</a>
-<nav class="topnav" aria-label="منوی اصلی"><a href="index.html">صفحه اصلی</a><a href="fiziknama.html">آزمایشگاه مجازی</a><a href="learning-path.html">نقشه یادگیری</a><a href="sources.html">منابع معتبر</a></nav></div></header>
+<nav class="topnav" aria-label="منوی اصلی"><a href="index.html">صفحه اصلی</a><a href="fiziknama.html">آزمایشگاه مجازی</a><a href="learning-path.html">نقشه یادگیری</a><a href="practice.html">حل مسئله</a><a href="labs-plus.html">آزمایش‌های اختصاصی</a><a href="sources.html">منابع معتبر</a></nav></div></header>
 <section class="hero"><div class="container"><span class="eyebrow">مجموعهٔ تألیفی کمک‌آموزشی | ویژه دانش‌آموز و دبیر</span>
 <h1>درس‌نامه‌های تخصصی فیزیک؛ از هفتم تا دوازدهم</h1>
 <p>مفهوم را بخوان، نمونهٔ حل‌شده را بررسی کن، یک آزمایش طراحی کن و سپس پاسخ خودت را با بازخورد تشریحی بسنج. فصل‌های مرتبط با ریاضی و تجربی جدا شده‌اند.</p>
-<div class="hero-links"><a href="#catalog">شروع مطالعه</a><a class="alt" href="fiziknama.html">ورود به شبیه‌سازی‌ها</a></div>
-<div class="badges"><span>۶ پایهٔ تحصیلی</span><span id="unitCount">۳۳ درس</span><span>مثال حل‌شده و فعالیت پژوهشی</span><span>تمرین با توضیح پاسخ</span></div></div></section>
+<div class="hero-links"><a href="#catalog">شروع مطالعه</a><a class="alt" href="fiziknama.html">ورود به شبیه‌سازی‌ها</a><a class="alt" href="practice.html">حل مسئلهٔ گام‌به‌گام</a><a class="alt" href="labs-plus.html">آزمایش‌های تخصصی</a></div>
+<div class="badges"><span>۶ پایهٔ تحصیلی</span><span id="unitCount">۳۳ درس</span><span>مثال حل‌شده و فعالیت پژوهشی</span><span>۹۹ ریزمبحث</span><span>۳۳ مسئلهٔ چندمرحله‌ای</span><span>۱۶ آزمایش تخصصی</span></div></div></section>
 <main class="container" id="catalog"><div class="notice">
 <strong>حدود پوشش:</strong> در متوسطهٔ اول فقط موضوعات مرتبط با فیزیک از کتاب «علوم تجربی» بررسی شده‌اند، نه تمام فصل‌های شیمی، زیست یا زمین‌شناسی. مطالب این صفحه شرح‌های تألیفی مطابق با سرفصل‌های شناخته‌شده‌اند، نه متن رسمی کتاب درسی یا تأییدیهٔ وزارت آموزش‌وپرورش. پیوند هر درس به آزمایشگاه ممکن است به یک <strong>مدل مکمل و نزدیک</strong> اشاره کند، نه شبیه‌سازی دقیق همان عنوان؛ برای نمونه میدان الکتریکی و مدار اهمی دو پدیدهٔ متفاوت‌اند. تفاوت فصل‌بندی ریاضی و تجربی مشخص شده و کنترل نهایی با چاپ سال تحصیلی مورد استفادهٔ مدرسه لازم است.
 </div>
@@ -86,10 +90,12 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cur
 <p><strong>راهنمای دبیر:</strong> برای هر درس، ترتیب پیشنهادی: پیش‌بینی ← مدل‌سازی ← حل نمونه ← آزمایش ایمن ← پرسش مفهومی ← مقایسه با کتاب درسی همان سال. از ارسال اطلاعات شخصی دانش‌آموز در سایت یا گزارش عمومی خطا خودداری کنید.</p>
 </section></main><footer class="footer"><div class="container">مدیریت و تولید محتوای آموزشی: سیده زهرا کراری، مدرس دانشگاه و دبیر فیزیک ـ تهران. این محتوا مکمل تدریس است و جایگزین کتاب رسمی نیست. <a href="index.html">بازگشت به سایت</a></div></footer>
 <script src="data/curriculum-data.js"></script>
+<script src="data/advanced-content.js"></script>
 <script>
 (function(){
 'use strict';
-const catalog=window.FIZIKNAMA_CURRICULUM;
+const catalog=window.FIZIKNAMA_CURRICULUM,extra=window.FIZIKNAMA_ADVANCED||{units:{},problems:[]};
+const special=new Set(["measurement","power","heat-transfer","compass","refraction","lever","buoyancy","phase","thermodynamics","coulomb","capacitor","lorentz","induction","pendulum","diffraction","photoelectric"]);
 const root=document.getElementById('units'),grade=document.getElementById('gradeFilter'),track=document.getElementById('trackFilter'),status=document.getElementById('statusFilter'),search=document.getElementById('searchInput');
 const storageKey='fiziknama.curriculum.answers.v1';
 let progress={};try{const raw=JSON.parse(localStorage.getItem(storageKey)||'{}');if(raw&&typeof raw==='object'&&!Array.isArray(raw))progress=raw;}catch(e){}
@@ -97,17 +103,22 @@ const E=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','
 const fgrade=n=>({7:'هفتم',8:'هشتم',9:'نهم',10:'دهم',11:'یازدهم',12:'دوازدهم'})[n];
 function unitHTML(x){
  const saved=progress[x.id]&&progress[x.id].correct;
+ const micro=extra.units?.[x.id]||[];
+ const problem=extra.problems?.find(p=>p.id===x.id);
  return `<details class="unit" data-id="${E(x.id)}" id="${E(x.id)}">
  <summary class="unit-head"><span class="unit-top"><span class="pill">پایه ${fgrade(x.grade)}</span><span class="pill branch">${E(x.branch)}</span>${saved?'<span class="pill" style="background:#dff8ea;color:#146d4e">تمرین موفق</span>':''}</span>
  <h3>${E(x.title)}</h3><small class="chapter">${E(x.chapter)}</small><p class="lead">${E(x.core)}</p><span class="chevron">مشاهدهٔ درس، مثال و پرسش ↓</span></summary>
- <div class="unit-content"><h4>توضیح تکمیلی</h4><p>${E(x.deeper)}</p>
+ <div class="unit-content"><h4>ریزمباحث کلیدی</h4><div class="micro-grid">${micro.map(m=>`<div class="micro"><strong>${E(m.title)}</strong><span>${E(m.text)}</span></div>`).join('')}</div>
+ <h4>توضیح تکمیلی</h4><p>${E(x.deeper)}</p>
  <h4>رابطهٔ مهم و فرض‌ها</h4><div class="formula" dir="ltr">${E(x.eq)}</div>
  <h4>نمونهٔ حل‌شده</h4><p class="worked">${E(x.worked)}</p>
  <h4>کاوش و فعالیت کلاس</h4><p>${E(x.explore)}</p>
  <h4>هشدار دربارهٔ خطای مفهومی</h4><p class="warning">${E(x.warning)}</p>
  <section class="quiz" aria-label="ارزشیابی تکوینی"><h4>پرسش خودسنجی</h4><p>${E(x.quiz.q)}</p>
  <div class="answers">${x.quiz.opts.map((option,i)=>`<button type="button" data-choice="${i}" aria-pressed="false">${E(option)}</button>`).join('')}</div><p class="feedback" hidden aria-live="polite"></p></section>
- <div class="unit-actions"><a href="fiziknama.html#lesson-${E(x.sim)}">آزمایشگاه مکمل و آزمون‌های بیشتر ←</a><a class="secondary" href="learning-path.html">نقشهٔ یادگیری</a></div>
+ <div class="unit-actions"><a href="fiziknama.html#lesson-${E(x.sim)}">آزمایشگاه مکمل و آزمون‌های بیشتر ←</a><a class="secondary" href="learning-path.html">نقشهٔ یادگیری</a>
+ ${problem?`<a class="secondary" href="practice.html#${E(x.id)}">حل مسئلهٔ چندمرحله‌ای</a>`:''}
+ ${problem&&special.has(problem.lab)?`<a class="secondary" href="labs-plus.html#${E(problem.lab)}">آزمایش تخصصی</a>`:''}</div>
  </div></details>`;
 }
 function allowed(x){
