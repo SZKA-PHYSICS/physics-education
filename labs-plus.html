@@ -62,7 +62,7 @@ footer{background:#132447;color:#d7e8fa;font-size:12px;padding:25px 0;margin-top
 'use strict';
 const labs=window.FIZIKNAMA_LABS||[], $=s=>document.querySelector(s);
 const fmt=x=>Number.isFinite(x)?new Intl.NumberFormat('fa-IR',{maximumFractionDigits:3}).format(x):'—';
-const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\\'':'&#39;'}[c]));
+const esc=x=>String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 let current=labs.some(l=>l.id===location.hash.slice(1))?location.hash.slice(1):(labs[0]&&labs[0].id);
 let params={},trials=[];
 function calc(id,p){
