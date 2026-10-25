@@ -17,7 +17,7 @@ for(const page of files){
  for(const [,link] of content.matchAll(/\bhref\s*=\s*["']([^"']+)["']/gi)){
   if(link.startsWith('#')||/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(link))continue;
   const clean=decodeURIComponent(link.split('#')[0].split('?')[0]);
-  if(!clean||clean.startsWith('/'))continue;
+  if(!clean||clean.startsWith('/')||clean.includes('${'))continue; // runtime-generated HTML links are not static paths
   check(fs.existsSync(path.resolve(root,path.dirname(page),clean)),`${page}: broken relative link ${link}`);
  }
 }
