@@ -48,7 +48,18 @@
 
 </style>
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiMxMTFiNDMiLz48ZyBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjMyIiByeD0iMjciIHJ5PSIxMSIgc3Ryb2tlPSIjNTVkN2ZmIiB0cmFuc2Zvcm09InJvdGF0ZSgzNSAzMiAzMikiLz48ZWxsaXBzZSBjeD0iMzIiIGN5PSIzMiIgcng9IjI3IiByeT0iMTEiIHN0cm9rZT0iI2ZmYzA0ZiIgdHJhbnNmb3JtPSJyb3RhdGUoLTM1IDMyIDMyKSIvPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjMyIiByeD0iMjciIHJ5PSIxMSIgc3Ryb2tlPSIjYTY4Y2ZmIiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAzMiAzMikiLz48L2c+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iNiIgZmlsbD0iI2ZmZGM1YSIvPjwvc3ZnPgo=" type="image/svg+xml">
-</head>
+<style id="fiziknama-promo-styles">
+.fiziknama-promo{margin-top:22px;margin-bottom:24px}
+.fiziknama-promo-inner{background:linear-gradient(115deg,#10264d,#344b9b);border-radius:24px;padding:27px 32px;color:#fff;display:flex;align-items:center;gap:28px;box-shadow:0 20px 48px rgba(20,47,116,.17)}
+.fiziknama-promo-icon{flex:none;width:94px;height:94px;border-radius:26px;display:grid;place-items:center;font-size:53px;color:#b8f7e3;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.19)}
+.fiziknama-promo-copy{flex:1;min-width:0}.fiziknama-promo-eyebrow{color:#aef1d9;font-size:12px;font-weight:800}
+.fiziknama-promo h2{color:#fff;margin:2px 0 8px;font-size:clamp(21px,2.5vw,29px)}.fiziknama-promo p{margin:0 0 14px;max-width:850px;line-height:1.95;color:#e7efff;font-size:14px}
+.fiziknama-promo-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.fiziknama-promo a{text-decoration:none}.fiziknama-promo-cta{background:#b7f4d8;color:#173356!important;padding:10px 18px;border-radius:12px;font-weight:800}
+.fiziknama-promo-secondary{color:#fff!important;padding:9px 8px;font-weight:700}
+.fiziknama-promo a:focus-visible{outline:3px solid #ffe48c;outline-offset:4px}
+@media(max-width:650px){.fiziknama-promo-inner{padding:20px 18px;border-radius:18px;gap:14px}.fiziknama-promo-icon{display:none}.fiziknama-promo h2{font-size:22px}}
+</style></head>
 <body>
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="ico-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
@@ -79,7 +90,7 @@
         <span><strong>آموزش فیزیک</strong><small>دنیای علم را کشف کن</small></span>
       </a>
       <nav id="main-nav" class="main-nav" aria-label="منوی اصلی">
-        <a class="active" href="#top">صفحه اصلی</a><a href="#grades">پایه‌های تحصیلی</a><a href="#resources">منابع آموزشی</a><a href="#simulator">شبیه‌سازی</a><a href="#topics">موضوعات</a><a href="sources.html">منابع معتبر</a><a href="about.html">درباره ما</a>
+        <a class="active" href="#top">صفحه اصلی</a><a href="#grades">پایه‌های تحصیلی</a><a href="#resources">منابع آموزشی</a><a href="#simulator">شبیه‌سازی</a><a href="fiziknama.html">آزمایشگاه فیزیک‌نما</a><a href="learning-path.html">مسیر یادگیری</a><a href="#topics">موضوعات</a><a href="sources.html">منابع معتبر</a><a href="about.html">درباره ما</a>
       </nav>
       <div class="header-actions"><button id="savedBtn" class="saved-btn" title="نشانک‌های من" aria-label="نمایش نشانک‌ها"><svg><use href="#ico-heart"/></svg><span>نشانک‌ها</span><b id="savedCount">۰</b></button><button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="باز کردن منو"><span></span><span></span><span></span></button></div>
     </div>
@@ -96,6 +107,15 @@
         <div class="suggestions" aria-label="موضوعات پیشنهادی"><span>پیشنهاد جستجو:</span><button data-topic="فشار">فشار</button><button data-topic="حرکت">حرکت</button><button data-topic="الکتریسیته">الکتریسیته</button><button data-topic="نور">نور</button><button data-topic="چگالی">چگالی</button></div>
       </div>
     </section>
+    <section class="container fiziknama-promo" aria-labelledby="fiziknama-promo-title">
+<div class="fiziknama-promo-inner">
+<div class="fiziknama-promo-icon" aria-hidden="true">Φ</div>
+<div class="fiziknama-promo-copy"><span class="fiziknama-promo-eyebrow">جدید • آزمایشگاه تعاملی و تمرین مفهومی</span>
+<h2 id="fiziknama-promo-title">فیزیک را آزمایش کن، نه فقط حفظ!</h2>
+<p>۱۴ موضوع از نور، حرکت، الکتریسیته و فشار تا گرما، امواج و فیزیک هسته‌ای؛ همراه با شبیه‌سازی، درس‌نامه، بازخورد فوری و راهنمای دبیر.</p>
+<div class="fiziknama-promo-actions"><a href="fiziknama.html" class="fiziknama-promo-cta">شروع نرم‌افزار فیزیک‌نما ←</a>
+<a href="learning-path.html" class="fiziknama-promo-secondary">دیدن مسیرهای یادگیری</a></div></div>
+</div></section>
     <section class="container shortcuts" aria-label="دسترسی سریع">
       <button class="shortcut purple" data-type="کتاب"><span class="icon-box"><svg><use href="#ico-book"/></svg></span><strong>کتاب‌های درسی</strong><small>منابع و دانلود</small></button>
       <button class="shortcut blue" data-type="جزوه"><span class="icon-box"><svg><use href="#ico-file"/></svg></span><strong>جزوه و خلاصه‌ها</strong><small>نکات کلیدی درس‌ها</small></button>
@@ -131,7 +151,7 @@
     <section class="container bottom-cards" aria-label="راهنمای سایت"><div class="surface info-card"><div class="info-emoji">📚</div><div><h2>یادگیری برای همه</h2><p>تمام بخش‌های این نسخه عمومی و بدون نیاز به ثبت‌نام در دسترس‌اند.</p></div></div><div class="surface info-card"><div class="info-emoji">💡</div><div><h2>مطالعه راحت‌تر</h2><p>مطلب موردعلاقه‌ات را نشانک بزن تا در همین مرورگر دوباره پیدایش کنی.</p></div></div><div class="surface info-card"><div class="info-emoji">🧪</div><div><h2>آزمایش به جای حفظ کردن</h2><p>با تغییر داده‌ها، رابطه میان کمیت‌های فیزیکی را کشف کن.</p></div></div></section>
     <section class="container about" id="about"><div><div class="about-tag">درباره آموزش فیزیک</div><h2>فیزیک را فقط نخوان؛ <span>کشفش کن.</span></h2><p>این وب‌سایت با مالکیت سیده زهرا کراری برای دانش‌آموزان پایه‌های هفتم تا دوازدهم طراحی شده است تا مفاهیم علوم و فیزیک را با توضیح روشن، منابع کاربردی و تجربه‌های تعاملی یاد بگیرند. محتوای فعلی نمونه است و فایل‌ها و درس‌های اصلی به‌تدریج جایگزین می‌شوند.</p><a class="about-read-more" href="about.html">آشنایی بیشتر با سایت و مالک آن ←</a></div><div class="about-orbit" aria-hidden="true"><span class="orbit o1"></span><span class="orbit o2"></span><span class="orbit o3"></span><span class="orbit-core"></span></div></section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><div><strong>⚛ آموزش فیزیک</strong><p>دنیای علم را کشف کن · نسخه آزمایشی</p></div><div class="footer-links"><a href="#top">صفحه اصلی</a><a href="#resources">مطالب آموزشی</a><a href="#simulator">شبیه‌سازی</a><a href="sources.html">منابع معتبر</a><a href="sources.html">منابع معتبر</a><a href="about.html">درباره ما</a></div><div class="footer-ownership"><strong>مالک سایت: سیده زهرا کراری</strong><small>© ۱۴۰۵ | حقوق محتوای اختصاصی سایت محفوظ است.</small></div></div></footer>
+  <footer class="footer"><div class="container footer-inner"><div><strong>⚛ آموزش فیزیک</strong><p>دنیای علم را کشف کن · نسخه آزمایشی</p></div><div class="footer-links"><a href="#top">صفحه اصلی</a><a href="#resources">مطالب آموزشی</a><a href="#simulator">شبیه‌سازی</a><a href="fiziknama.html">فیزیک‌نما</a><a href="learning-path.html">مسیر یادگیری</a><a href="sources.html">منابع معتبر</a><a href="sources.html">منابع معتبر</a><a href="about.html">درباره ما</a></div><div class="footer-ownership"><strong>مالک سایت: سیده زهرا کراری</strong><small>© ۱۴۰۵ | حقوق محتوای اختصاصی سایت محفوظ است.</small></div></div></footer>
   <div class="modal-backdrop" id="modalBackdrop" hidden><section class="content-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="بستن"><svg><use href="#ico-close"/></svg></button><div id="modalContent"></div></section></div>
   <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
   <script>
