@@ -71,6 +71,7 @@ footer a{text-decoration:underline}
 const ADV=window.FIZIKNAMA_ADVANCED,CORE=window.FIZIKNAMA_CURRICULUM;
 if(!ADV||!CORE){document.getElementById('worksheet').textContent='دادهٔ آموزشی بارگیری نشد؛ فایل‌های data را بررسی کنید.';return}
 const byId=Object.fromEntries(CORE.units.map(x=>[x.id,x]));
+const special=new Set(['measurement','power','heat-transfer','compass','refraction','lever','buoyancy','phase','thermodynamics','coulomb','capacitor','lorentz','induction','pendulum','diffraction','photoelectric']);
 const problems=ADV.problems;
 const storeKey='fiziknama.problem.steps.v1';
 let completed={};try{completed=JSON.parse(localStorage.getItem(storeKey)||'{}')||{}}catch(e){}
@@ -113,7 +114,7 @@ function renderProblem(){
  }).join('')}
  ${done.length===count?'<div class="complete">✓ همهٔ مراحل درست حل شد. اکنون می‌توانید نتیجه و فرض‌های مدل را با درس‌نامه مقایسه کنید.</div>':''}
  <div class="actions"><a href="curriculum.html#${p.id}">مطالعهٔ درس مرتبط</a>
- <a class="secondary" href="labs-plus.html#${esc(p.lab)}">آزمایشگاه ویژهٔ مرتبط</a>
+ ${special.has(p.lab)?`<a class="secondary" href="labs-plus.html#${esc(p.lab)}">آزمایشگاه تخصصی</a>`:''}
  <a class="secondary" href="fiziknama.html#lesson-${esc(unit.sim)}">آزمایشگاه اصلی</a></div>
  <p class="muted">برای ورودی‌هایی مانند ۰٫۵ از نقطه یا ممیز فارسی استفاده کنید. پاسخ عددی با خطای گردکردن جزئی پذیرفته می‌شود؛ توضیح علمی بعد از پاسخ صحیح نمایش داده خواهد شد.</p>`;
  renderMenu();if(!isDone(p)){const first=document.querySelector('.stage:not(.locked) .answer');if(first)first.focus({preventScroll:true})}
