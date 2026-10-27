@@ -41,6 +41,18 @@ for(const config of [{w:1440,h:900,name:'desktop'},{w:390,h:844,name:'mobile'}])
     check(before!==after,'Home pressure slider does not update');
     check(after==='۲۹٫۴'||after==='۲۹.۴','Home water pressure wrong at 3m: '+after);
     check(await page.locator('.home-platform-card').count()===3,'Home platform taxonomy missing');
+    const illustrationStatus=await page.locator('.showcase-scene img').evaluateAll(imgs=>imgs.map(img=>({src:img.getAttribute('src'),ok:img.complete&&img.naturalWidth>0,alt:img.getAttribute('alt')||''})));
+    check(illustrationStatus.length===4,'Expected four illustrated 3D physics experiment scenes');
+    for(const img of illustrationStatus){check(img.ok,'Experiment scene missing: '+img.src);check(img.alt.length>20,'Weak illustration alt text '+img.src)}
+    const capabilityStatus=await page.locator('.showcase-tool').evaluateAll((els)=>els.map(el=>({name:el.textContent.trim(),top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,visible:!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length)})));
+    check(capabilityStatus.length===4,'Expected four core platform capabilities on the homepage');
+    if(config.name==='mobile'){
+     for(const tile of capabilityStatus){
+      check(tile.visible&&tile.bottom<=config.h+3,'Main mobile feature not visible in first screen: '+tile.name+' bottom '+tile.bottom+' viewport '+config.h);
+     }
+     const gallery=await page.locator('.showcase-gallery').boundingBox();
+     check(!!gallery&&gallery.bottom<config.h-100,'3D physics experiment gallery pushed too far below mobile viewport');
+    }
    }
    if(key==='curriculum')check(await page.locator('.unit').count()===33,route+' missing 33 lessons');
    if(key==='labs'){
