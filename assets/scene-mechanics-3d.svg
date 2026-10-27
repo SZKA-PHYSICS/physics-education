@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 550" role="img" aria-label="Three dimensional Newton cradle and laboratory pendulum apparatus">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b274a"/><stop offset="1" stop-color="#244c7b"/></linearGradient>
+ <radialGradient id="g" cx="50%" cy="50%" r="50%"><stop stop-color="#64d8f9" stop-opacity=".63"/><stop offset="1" stop-color="#64d8f9" stop-opacity="0"/></radialGradient>
+ <linearGradient id="metal" x1="0" x2="1" y1="0" y2=".2"><stop stop-color="#e6efff"/><stop offset=".23" stop-color="#526988"/><stop offset=".52" stop-color="#e4ecf4"/><stop offset=".76" stop-color="#51637e"/><stop offset="1" stop-color="#dce9ff"/></linearGradient>
+ <linearGradient id="glass" x1="0" x2="1"><stop stop-color="#ecf8ff" stop-opacity=".5"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".6" stop-color="#b7e4ff" stop-opacity=".22"/><stop offset=".86" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#e9ffff" stop-opacity=".58"/></linearGradient>
+ <radialGradient id="sphere" cx=".28" cy=".19" r=".85"><stop stop-color="#fff"/><stop offset=".11" stop-color="#d4eeff"/><stop offset=".33" stop-color="#7f9fbf"/><stop offset=".67" stop-color="#223d64"/><stop offset="1" stop-color="#061528"/></radialGradient>
+ <linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7b19b" stop-opacity=".31"/><stop offset="1" stop-color="#492946" stop-opacity=".38"/></linearGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
+ <filter id="shine" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<rect width="720" height="550" fill="url(#bg)"/>
+<ellipse cx="540" cy="135" rx="330" ry="260" fill="url(#g)"/>
+<path d="M0 405 L720 370 V550 H0Z" fill="url(#desk)"/>
+<path d="M0 407 L720 375" stroke="#ffffff" stroke-opacity=".3" stroke-width="2"/>
+<ellipse cx="340" cy="458" rx="300" ry="51" fill="#071124" opacity=".56" filter="url(#shadow)"/>
+
+<!-- cradle base -->
+<path d="M93 425 L575 421 L638 464 L150 475Z" fill="#1d3558" stroke="#9eb6d2" stroke-width="4"/>
+<path d="M150 475 L638 464 L638 490 L150 504Z" fill="#0b162f" stroke="#647c9c" stroke-width="3"/>
+<path d="M95 422 L150 475 L150 504 L94 447Z" fill="#364765" stroke="#9eb6d2" stroke-width="2"/>
+<!-- structure -->
+<path d="M147 426 L147 119 L560 115 L560 420" stroke="url(#metal)" stroke-width="15" stroke-linecap="round" fill="none"/>
+<path d="M147 125 L561 121" stroke="#ffffff" stroke-width="3" opacity=".72"/>
+<!-- strings and polished spheres -->
+<path d="M245 117 L245 346" stroke="#e4f4ff" stroke-width="3"/><circle cx="245" cy="369" r="28" fill="url(#sphere)" stroke="#cee5fa" stroke-width="2"/><ellipse cx="236" cy="357" rx="7" ry="4" fill="#fff" opacity=".77"/><path d="M303 117 L303 346" stroke="#e4f4ff" stroke-width="3"/><circle cx="303" cy="369" r="28" fill="url(#sphere)" stroke="#cee5fa" stroke-width="2"/><ellipse cx="294" cy="357" rx="7" ry="4" fill="#fff" opacity=".77"/><path d="M361 117 L361 346" stroke="#e4f4ff" stroke-width="3"/><circle cx="361" cy="369" r="28" fill="url(#sphere)" stroke="#cee5fa" stroke-width="2"/><ellipse cx="352" cy="357" rx="7" ry="4" fill="#fff" opacity=".77"/><path d="M419 117 L419 346" stroke="#e4f4ff" stroke-width="3"/><circle cx="419" cy="369" r="28" fill="url(#sphere)" stroke="#cee5fa" stroke-width="2"/><ellipse cx="410" cy="357" rx="7" ry="4" fill="#fff" opacity=".77"/>
+<!-- first pendulum swung -->
+<path d="M190 117 L118 323" stroke="#d8f6ff" stroke-width="3"/>
+<circle cx="110" cy="347" r="29" fill="url(#sphere)" stroke="#d8f5ff" stroke-width="3"/>
+<circle cx="100" cy="336" r="7" fill="#fff" opacity=".75"/>
+<!-- motion trail -->
+<path d="M119 312 Q95 318 73 346" stroke="#8af3ff" stroke-width="4" stroke-dasharray="6 8" opacity=".8" fill="none"/>
+<!-- bright pendulum stand on right -->
+<path d="M591 425 L591 176" stroke="url(#metal)" stroke-width="12"/>
+<path d="M534 178 L657 178" stroke="url(#metal)" stroke-width="9"/>
+<path d="M599 181 L668 295" stroke="#d6f8ff" stroke-width="3"/>
+<circle cx="678" cy="313" r="26" fill="url(#sphere)" stroke="#9eeeff" stroke-width="2"/>
+<!-- measurement ruler -->
+<path d="M173 459 L541 447" stroke="#d8eaff" stroke-width="12" opacity=".85"/>
+<path d="M186 458 l0 -17" stroke="#23466b" stroke-width="2"/><path d="M207 457.35 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M228 456.7 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M249 456.05 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M270 455.4 l0 -17" stroke="#23466b" stroke-width="2"/><path d="M291 454.75 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M312 454.1 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M333 453.45 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M354 452.8 l0 -17" stroke="#23466b" stroke-width="2"/><path d="M375 452.15 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M396 451.5 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M417 450.85 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M438 450.2 l0 -17" stroke="#23466b" stroke-width="2"/><path d="M459 449.55 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M480 448.9 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M501 448.25 l0 -9" stroke="#23466b" stroke-width="2"/><path d="M522 447.6 l0 -17" stroke="#23466b" stroke-width="2"/>
+<circle cx="560" cy="88" r="65" fill="#8fd9ff" opacity=".24" filter="url(#shadow)"/>
+
+</svg>
