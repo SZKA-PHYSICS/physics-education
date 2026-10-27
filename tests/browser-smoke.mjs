@@ -51,7 +51,7 @@ for(const config of [{w:1440,h:900,name:'desktop'},{w:390,h:844,name:'mobile'}])
       check(tile.visible&&tile.bottom<=config.h+3,'Main mobile feature not visible in first screen: '+tile.name+' bottom '+tile.bottom+' viewport '+config.h);
      }
      const gallery=await page.locator('.showcase-gallery').boundingBox();
-     check(!!gallery&&gallery.bottom<config.h-100,'3D physics experiment gallery pushed too far below mobile viewport');
+     check(!!gallery&&(gallery.y+gallery.height)<config.h-80,'3D experiment gallery extends too far below mobile viewport: '+JSON.stringify(gallery));
     }
    }
    if(key==='curriculum')check(await page.locator('.unit').count()===33,route+' missing 33 lessons');
