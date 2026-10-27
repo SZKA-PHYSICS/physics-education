@@ -177,7 +177,8 @@ a{text-decoration:none;color:inherit}
  .home-footer-top{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vivid-spectrum.css"></head>
+</style><link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vivid-spectrum.css">
+<link rel="stylesheet" href="assets/laboratory-landing.css"></head>
 <body>
 <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
 <header id="top" class="science-header">
@@ -200,18 +201,46 @@ a{text-decoration:none;color:inherit}
  </div>
 </header>
 <main id="main">
-<section class="home-hero" aria-labelledby="home-main-title">
-<div class="home-wrap home-hero-inner">
-<div class="home-hero-content">
- <span class="home-tag"><span class="dot" aria-hidden="true"></span>آموزش مفهومی · شبیه‌سازی · تحلیل علمی</span>
- <h1 id="home-main-title">فیزیک را <em>ببینید،</em><br>آزمایش کنید،<br>بفهمید.</h1>
- <p class="home-hero-description">محیطی یکپارچه برای دانش‌آموزان و دبیران؛ از مشاهدهٔ پدیده‌ها و تغییر متغیرها تا درک قانون‌های فیزیک، حل مسئله و ارزشیابی یادگیری.</p>
- <div class="home-hero-actions">
- <a class="home-primary-button" href="fiziknama.html">ورود به آزمایشگاه اصلی <span aria-hidden="true">↖</span></a>
- <a class="home-secondary-button" href="curriculum.html">مطالعهٔ درس‌نامه‌ها <span aria-hidden="true">←</span></a>
- </div>
- <div class="home-hero-meta"><span>فارسی و راست‌به‌چپ</span><span>مناسب موبایل و رایانه</span><span>همراه با فرض‌های علمی مدل</span></div>
+<section class="home-hero showcase-hero" aria-labelledby="home-main-title">
+<div class="home-wrap showcase-inner">
+<div class="showcase-intro">
+<span class="showcase-kicker">فیزیک‌نما | آزمایشگاه تصویری دبیرستان</span>
+<h1 id="home-main-title">فیزیک، روی <span>میز آزمایش</span></h1>
+<p>از منشور و مدار تا آونگ و فشار مایعات؛ پدیده‌ها را در تصویر ببینید، سپس مدل‌ها را خودتان تغییر دهید و نتیجه را بررسی کنید.</p>
+<div class="showcase-intro-buttons"><a class="showcase-primary" href="labs-plus.html">کاوش آزمایشگاه‌ها ←</a><a class="showcase-outline" href="curriculum.html">انتخاب پایه و درس</a></div>
+<div class="showcase-intro-meta"><span><b>۳۰</b> مدل تعاملی</span><span><b>۶</b> پایهٔ تحصیلی</span><span><b>۳۳</b> مسیر تمرین</span></div>
 </div>
+<div class="showcase-gallery" role="group" aria-label="چهار تصویر از آزمایش‌های متنوع فیزیک دبیرستان"><a class="showcase-scene" data-kind="optics" href="labs-plus.html#refraction" aria-label="آزمایش نور و طیف">
+<img src="assets/scene-optics-3d.svg" alt="نمایش سه‌بعدی آزمایش نورشناسی: منشور شیشه‌ای، لیزر، پایهٔ اپتیکی و طیف رنگی" width="720" height="550" decoding="async" fetchpriority="high">
+<span class="showcase-scene-info"><span><strong>نور و طیف</strong><small>منشور و شکست نور</small></span><span class="showcase-scene-number">01 / LAB</span></span></a>
+<a class="showcase-scene" data-kind="electric" href="labs-plus.html#induction" aria-label="آزمایش برق و مغناطیس">
+<img src="assets/scene-electricity-3d.svg" alt="نمایش سه‌بعدی ابزار برق و مغناطیس: منبع تغذیه، سیم‌پیچ مسی، آهن‌ربا و لامپ روشن" width="720" height="550" decoding="async" loading="eager">
+<span class="showcase-scene-info"><span><strong>برق و مغناطیس</strong><small>مدار و القای الکتریکی</small></span><span class="showcase-scene-number">02 / LAB</span></span></a>
+<a class="showcase-scene" data-kind="mechanics" href="labs-plus.html#pendulum" aria-label="آزمایش حرکت و نوسان">
+<img src="assets/scene-mechanics-3d.svg" alt="نمایش سه‌بعدی آزمایش مکانیک با گهوارهٔ نیوتن و آونگ روی میز آزمایش" width="720" height="550" decoding="async" loading="eager">
+<span class="showcase-scene-info"><span><strong>حرکت و نوسان</strong><small>آونگ و برخورد</small></span><span class="showcase-scene-number">03 / LAB</span></span></a>
+<a class="showcase-scene" data-kind="fluids" href="fiziknama.html#lesson-pressure" aria-label="آزمایش شاره‌ها و فشار">
+<img src="assets/scene-fluids-3d.svg" alt="نمایش سه‌بعدی آزمایش فشار مایعات: لولهٔ U شیشه‌ای، بشر آب، خط‌کش و فشارسنج" width="720" height="550" decoding="async" loading="eager">
+<span class="showcase-scene-info"><span><strong>شاره‌ها و فشار</strong><small>لولهٔ U و عمق</small></span><span class="showcase-scene-number">04 / LAB</span></span></a></div>
+</div>
+<div class="home-wrap showcase-tools" id="featuredCapabilities" aria-label="قابلیت‌های اصلی فیزیک‌نما"><a class="showcase-tool" href="fiziknama.html"><span class="showcase-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="9" ry="4.5"/><ellipse cx="12" cy="12" rx="9" ry="4.5" transform="rotate(62 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4.5" transform="rotate(124 12 12)"/></svg></span><span class="showcase-tool-info"><strong>شبیه‌سازی‌های تعاملی</strong><small>۱۴ مدل مفهومی</small></span><span class="showcase-tool-arrow" aria-hidden="true">↖</span></a>
+<a class="showcase-tool" href="labs-plus.html"><span class="showcase-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v7l-6 10h16l-6-10V3"/><path d="M7 16h10M9 19h6"/></svg></span><span class="showcase-tool-info"><strong>آزمایشگاه مجازی</strong><small>۱۶ آزمایش تخصصی</small></span><span class="showcase-tool-arrow" aria-hidden="true">↖</span></a>
+<a class="showcase-tool" href="curriculum.html"><span class="showcase-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5c3-1.8 6-1.6 9 0 3-1.6 6-1.8 9 0v14c-3-1.4-6-1.4-9 0-3-1.4-6-1.4-9 0zM12 6v13M6 9h3M15 9h3"/></svg></span><span class="showcase-tool-info"><strong>درس‌نامه‌های کامل</strong><small>پایه‌های هفتم تا دوازدهم</small></span><span class="showcase-tool-arrow" aria-hidden="true">↖</span></a>
+<a class="showcase-tool" href="practice.html"><span class="showcase-tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h8"/></svg></span><span class="showcase-tool-info"><strong>حل مسئلهٔ مرحله‌ای</strong><small>۳۳ مسئله با بازخورد</small></span><span class="showcase-tool-arrow" aria-hidden="true">↖</span></a></div>
+<div class="showcase-support"><a href="learning-path.html">مسیر یادگیری و راهنمای دبیر ←</a></div>
+</section>
+<section class="home-proof" aria-label="اطلاعات واقعی محیط آموزشی"><div class="home-wrap home-proof-grid">
+ <div class="home-proof-item"><strong>۳۰</strong><span>شبیه‌سازی مستقل و مکمل</span></div>
+ <div class="home-proof-item"><strong>۳۳</strong><span>واحد آموزشی طبقه‌بندی‌شده</span></div>
+ <div class="home-proof-item"><strong>۹۹</strong><span>ریزمبحث مفهومی</span></div>
+ <div class="home-proof-item"><strong>۶۷</strong><span>گام حل مسئله با بازخورد</span></div>
+</div></section>
+<section class="home-lab-teaser" aria-label="آزمایش زندهٔ فشار هیدرواستاتیکی">
+<div class="home-wrap home-lab-teaser-inner">
+<div class="home-lab-teaser-copy"><small>کاوش زنده • نمایش رابطهٔ فیزیکی</small>
+<h2>فقط نگاه نکنید؛ آزمایش کنید.</h2>
+<p>عمق و نوع مایع را عوض کنید و ببینید فشار هیدرواستاتیکی چگونه تغییر می‌کند. این آزمایش از رابطهٔ ΔP = ρgh برای شارهٔ ساکن استفاده می‌کند و فشار پیمانه‌ای را نشان می‌دهد.</p>
+<a href="fiziknama.html#lesson-pressure">آزمایش‌های بیشتر فشار و شاره‌ها ←</a></div>
 <div class="home-demo" id="simulator" aria-labelledby="demo-heading">
  <div class="home-demo-head"><span class="home-demo-title" id="demo-heading">آزمایش زنده / فشار هیدرواستاتیکی</span><span class="home-demo-index">● LIVE LAB · 01</span></div>
  <div class="home-demo-visual">
@@ -246,13 +275,6 @@ a{text-decoration:none;color:inherit}
   <div><label for="depthRange">عمق سنسور <span id="depthLabel" class="home-demo-control-val">۲ متر</span></label><input id="depthRange" type="range" min="0" max="5" step=".25" value="2" aria-label="عمق سنسور بر حسب متر"></div>
  </div>
 </div>
-</div>
-</section>
-<section class="home-proof" aria-label="اطلاعات واقعی محیط آموزشی"><div class="home-wrap home-proof-grid">
- <div class="home-proof-item"><strong>۳۰</strong><span>شبیه‌سازی مستقل و مکمل</span></div>
- <div class="home-proof-item"><strong>۳۳</strong><span>واحد آموزشی طبقه‌بندی‌شده</span></div>
- <div class="home-proof-item"><strong>۹۹</strong><span>ریزمبحث مفهومی</span></div>
- <div class="home-proof-item"><strong>۶۷</strong><span>گام حل مسئله با بازخورد</span></div>
 </div></section>
 <section id="platform" class="home-section home-wrap" aria-labelledby="platform-heading">
  <div class="home-section-heading"><div><span class="home-eyebrow">سامانهٔ یکپارچهٔ یادگیری</span><h2 id="platform-heading">ابزارهای آموزشی؛ هرکدام با یک هدف روشن</h2><p>از مشاهده و تحلیل داده تا مرور مفاهیم و تمرین؛ مسیرهای آموزشی به یکدیگر متصل‌اند.</p></div></div>
